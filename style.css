@@ -1,0 +1,106 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .container-fluid {
+    padding: 20px;
+  }
+  
+  /* Example CSS for responsiveness */
+/* Large devices (desktops) */
+@media (min-width: 992px) {
+    /* Add your styles for large screens here */
+  }
+  
+  /* Medium devices (tablets) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* Add your styles for medium screens here */
+  }
+  
+  /* Small devices (landscape phones) */
+  @media (min-width: 576px) and (max-width: 767px) {
+    /* Add your styles for small screens here */
+  }
+  
+  /* Extra small devices (portrait phones) */
+  @media (max-width: 575px) {
+    /* Add your styles for extra small screens here */
+  }
+  
+  /* Header Styles */
+  .title {
+    margin-bottom: 20px;
+  }
+  
+  .sub-title {
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styles */
+  .container-fluid-main {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .text-danger {
+    color: red;
+  }
+  
+  /* Table Styles */
+  .table-success th {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  /* Form Input Styles */
+  .form-control {
+    margin-top: 10px;
+  }
+  
+  /* Footer Styles */
+  .footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Additional Styles (Adjust as needed) */
+  .container-1 {
+    margin-top: 20px;
+   /* text-align: center;*/
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .container-2{
+    text-align: center;
+    margin-left: 4%;
+  }
+  .container-3{
+   margin-left: 0;
+   text-align: center;
+  }
+  .nb{
+    text-align: center;
+    margin-left: 5%;
+  }
+  /* Add your own custom styles below */
+  
+  /* Example of adding a border to form elements */
+  /* input, textarea {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  } */
+  

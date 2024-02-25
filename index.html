@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MWALIMU DIGITAL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dai+Banna+SIL:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Kumbh+Sans:wght@700;800&family=Poppins:wght@100;200;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body ng-app="myApp">
+  <div class="container-fluid">
+    <div class="container-fluid-main">
+      <h1 class="title border text-center bg-primary text-white font-weight-bolder mt-3">JUNIOR SCHOOL, 2024
+        <div ng-controller="myCtrl">
+          <h1>{{theTime}}</h1>
+        </div>
+      </h1>
+      <h2 class="sub-title border text-center bg-info mb-3 mt-3 font-weight-bolder">Lesson Presentation(1)</h2>
+      <form action="process_form.php" method="post">
+      <!-- Your form elements go here -->
+      <form name="myForm" ng-submit="submitForm()">
+        <!-- First and Last Name Inputs -->
+        <div class="container-fluid mb-1 mt-3 text-danger">
+          <div>
+            <label for="firstname">First Name: </label>
+            <input name="firstname" ng-model="formData.firstName" required>
+          </div><br>
+          <div>
+            <label for="lastname">Last Name: </label>
+            <input name="lastname" ng-model="formData.lastName" required>
+          </div>
+        </div>
+
+        <!-- Table for Lesson Details -->
+        <div class="container-fluid p-3 mt-1">
+          <table class="table mb-1 p-1">
+            <!-- Table headers go here -->
+            <thead class="table-success">
+              <tr>
+                <th><label for="larea">L.Area</label></th>
+                <th><label for="grade">Grade</label></th>
+                <th><label for="time">Time </label></th>
+                <th><label for="date">Date </label></th>
+                <th><label for="roll">Roll </label></th>
+              </tr>
+            </thead>
+            <!-- Table body goes here -->
+            <tbody>
+              <tr>
+                <td><input type="text" class="form-control form-control mt-3" placeholder=""></td>
+                <td><input type="text" class="form-control form-control mt-3" placeholder=""></td>
+                <td><input type="text" class="form-control form-control mt-3" placeholder=""></td>
+                <td><input type="text" class="form-control form-control mt-3" placeholder=""></td>
+                <td><input type="text" class="form-control form-control mt-3" placeholder=""></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Other form elements go here -->
+    <!-- ... (Previous code) ... -->
+
+    <form action="/action_page.php">
+        <div class="input-group mb-3">
+          <span class="input-group-text">Strand/ Theme:</span>
+          <input type="text" class="form-control">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Sub Strand:</span>
+          <input type="text" class="form-control">
+        </div>
+      </form>
+      
+      <form action="/action_page.php">
+        <div class="form-label">
+          <h2 class="p-1 border text-center bg-info mb-3 mt-3">Specific Learning Outcomes:</h2>
+          <div class="container-1 mt-3">
+            <label for="knowledge_comment">i. Knowledge:</label>
+            <textarea class="form-control" rows="5" id="knowledge_comment" name="knowledge_text" required></textarea>
+          </div>
+          <div class="container-1 mt-3">
+            <label for="skill_comment">ii. Skill:</label>
+            <textarea class="form-control" rows="5" id="skill_comment" name="skill_text" required></textarea>
+          </div>
+          <div class="container-1 mt-3">
+            <label for="attitude_comment">iii. Attitude:</label>
+            <textarea class="form-control" rows="5" id="attitude_comment" name="attitude_text" required></textarea>
+          </div>
+        </div>
+      </form>
+      <form action="/action_page.php">
+        <div class="form-label">
+          <h2 class="p-1 border text-center bg-info mb-3 mt-3">Key Inquiry Question(s):</h2>
+          <div class="container-1 mt-3">
+            <label for="question_i">i:</label>
+            <textarea class="form-control" rows="2" id="question_i" name="question_i" required></textarea>
+          </div>
+          <div class="container-1 mt-3">
+            <label for="question_ii">ii:</label>
+            <textarea class="form-control" rows="2" id="question_ii" name="question_ii" required></textarea>
+          </div>
+        </div>
+      </form>
+      
+      <form action="/action_page.php">
+        <div class="form-label">
+          <h2 class="p-1 border text-center bg-info mb-3 mt-3">Learning Resources.</h2>
+          <div class="container-1 mt-2">
+            <label for="learning_resources"></label>
+            <textarea class="form-control" rows="5" id="learning_resources" name="learning_resources" required></textarea>
+          </div>
+        </div>
+      </form>
+      
+      <form action="/action_page.php">
+        <div class="form-label">
+          <h2 class="p-1 border text-center bg-info mb-3 mt-3">Core Competencies To Be Developed.</h2>
+          <div class="container-1 mt-2">
+            <label for="competencies"></label>
+            <textarea class="form-control" rows="5" id="competencies" name="competencies" required></textarea>
+          </div>
+        </div>
+      </form>
+      
+      <form action="/action_page.php">
+        <div class="form-label">
+          <h2 class="p-1 border text-center bg-info mb-3 mt-3">Values.</h2>
+          <div class="container-1 mt-2">
+            <label for="values"></label>
+            <textarea class="form-control" rows="4" id="values" name="values" required></textarea>
+          </div>
+        </div>
+      </form>
+      
+      <form action="/action_page.php">
+        <div class="form-label">
+          <h2 class="p-1 border text-center bg-info mb-3 mt-3">Links To Other Learning Areas.</h2>
+          <div class="container-1 mt-2">
+            <label for="links_to_other_areas"></label>
+            <textarea class="form-control" rows="4" id="links_to_other_areas" name="links_to_other_areas" required></textarea>
+          </div>
+        </div>
+      </form>
+      
+      <form action="/action_page.php">
+        <div class="form-label">
+          <h2 class="p-1 border text-center bg-info mb-3 mt-3">Links To Pertinent and Contemporary Issues (PCI'S).</h2>
+          <div class="container-1 mt-2">
+            <label for="pci_links"></label>
+            <textarea class="form-control" rows="4" id="pci_links" name="pci_links" required></textarea>
+          </div>
+        </div>
+      </form>
+     
+      <form action="/action_page.php">
+        <div class="form-label">
+          <h1 class=" p-1 border text-center bg-warning mt-3">Organisation Of Learning.</h1>
+          <div class="container-1 mt-2">
+            <label for="organization_comment"></label>
+            <textarea class="form-control" rows="3" id="organization_comment" name="text" required></textarea>
+          </div>
+        </div>
+      </form>
+      
+      <form action="/action_page.php">
+        <div class="form-label">
+          <h2 class="p-1 border text-center bg-info mb-3 mt-3">Introduction.</h2>
+          <div class="container-1 mt-2">
+            <label for="introduction_comment"></label>
+            <textarea class="form-control" rows="5" id="introduction_comment" name="text" required></textarea>
+          </div>
+        </div>
+      </form>
+      
+      <form action="/action_page.php">
+        <div class="form-label">
+          <h2 class="p-1 border text-center bg-primary text-danger mb-3 mt-3">Lesson Development:</h2>
+          <div class="container-1 mt-2">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>STEP</th>
+                  <th>Learning Experiences/Activities</th>
+                  <th>Competencies Developed, Values and PCI'S</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Step 1</td>
+                  <td>
+                    <div class="input-group-text"></div>
+                    <textarea class="form-control" rows="4" id="step1_learning" name="text" required></textarea>
+                  </td>
+                  <td>
+                    <div class="input-group-text"></div>
+                    <textarea class="form-control" rows="4" id="step1_competencies" name="text" required></textarea>
+                  </td>
+                </tr>
+                <tr>
+                    <td>Step 2</td>
+                    <td>
+                      <div class="input-group-text"></div>
+                      <textarea class="form-control" rows="4" id="step1_learning" name="text" required></textarea>
+                    </td>
+                    <td>
+                      <div class="input-group-text"></div>
+                      <textarea class="form-control" rows="4" id="step1_competencies" name="text" required></textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Step 3</td>
+                    <td>
+                      <div class="input-group-text"></div>
+                      <textarea class="form-control" rows="4" id="step1_learning" name="text" required></textarea>
+                    </td>
+                    <td>
+                      <div class="input-group-text"></div>
+                      <textarea class="form-control" rows="4" id="step1_competencies" name="text" required></textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Step 4</td>
+                    <td>
+                      <div class="input-group-text"></div>
+                      <textarea class="form-control" rows="4" id="step1_learning" name="text" required></textarea>
+                    </td>
+                    <td>
+                      <div class="input-group-text"></div>
+                      <textarea class="form-control" rows="4" id="step1_competencies" name="text" required></textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Step 5</td>
+                    <td>
+                      <div class="input-group-text"></div>
+                      <textarea class="form-control" rows="4" id="step1_learning" name="text" required></textarea>
+                    </td>
+                    <td>
+                      <div class="input-group-text"></div>
+                      <textarea class="form-control" rows="4" id="step1_competencies" name="text" required></textarea>
+                    </td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </form>
+      
+      <form action="/action_page.php">
+        <div class="form-label">
+          <h2 class="p-1 border text-center bg-info mb-3 mt-3">Extended Learning Activities.</h2>
+          <div class="container-1 mt-2">
+            <label for="extended_activities_comment"></label>
+            <textarea class="form-control" rows="3" id="extended_activities_comment" name="text" required></textarea>
+          </div>
+        </div>
+      </form>
+      <form action="/action_page.php">
+        <div class="form-label">
+          <h2 class="p-1 border text-center bg-info mb-3 mt-3">Conclusion.</h2> 
+          <div class="container-1 mt-2">
+            <label for="conclusion_comment"></label>
+            <textarea class="form-control" rows="4" id="conclusion_comment" name="text" required></textarea>
+          </div>  
+        </div>
+      </form> 
+      
+      <form action="/action_page.php">
+        <div class="form-label"> 
+          <h2 class="p-1 border text-center bg-warning mb-1">Reflection On The Lesson.</h2>
+          <div class="container-1 mt-2 mb-3">
+            <label for="reflection_comment"></label>
+            <textarea class="form-control" rows="4" id="reflection_comment" name="text" required></textarea>
+          </div> 
+        </div>
+      </form>
+      <br>
+             
+      <div class="container-3">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+            </div>
+            <br>
+        <!-- Additional form fields and elements -->
+        <form action="/submit_form.php" method="post">
+        <!-- Submit button -->
+        <div class="container-2">
+            <input type="submit" class="btn btn-primary" value="Submit Lesson Plan">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="nb">
+  <a href="form1.html" class="btn btn-primary">Next</a></div>
+ <!-- <a href="index.html" class="btn btn-secondary">Back</a> -->
+  <div class="footer mt-5">
+    <p>Mwalimu<i class="fas fa-copyright"></i>2024</p>
+  </div>
+
+  <!-- Include AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  <!-- Your AngularJS and other script code goes here -->
+  <script>
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl', function ($scope, $interval) {
+      $scope.theTime = new Date().toLocaleTimeString();
+      $interval(function () {
+        $scope.theTime = new Date().toLocaleTimeString();
+      }, 1000);
+    });
+
+    app.controller('lessonCtrl', function ($scope) {
+      // Define your AngularJS controller logic here
+      // You can use $scope to interact with the HTML elements
+    });
+
+    app.controller('formCtrl', function ($scope, $http) {
+      $scope.formData = {}; // Initialize form data object
+
+      $scope.submitForm = function () {
+        // Perform form submission logic here
+        $http.post('/your-server-endpoint', $scope.formData)
+          .then(function (response) {
+            console.log('Form submission successful:', response.data);
+            // You can handle the response from the server here
+          })
+          .catch(function (error) {
+            console.error('Form submission error:', error);
+          });
+      };
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
