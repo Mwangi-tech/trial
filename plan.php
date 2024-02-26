@@ -33,7 +33,7 @@ $conclusionComment = $_POST["conclusion_comment"];
 $reflectionComment = $_POST["reflection_comment"];
     // Compose the email message
     $to = "danielkiarie042@gmail.com";
-    $subject = "New Form Submission";
+    $subject = "Lesson plan";
     $message = "Name: $name\n";
     $message .= "Email: $email\n";
      $message .= "First Name: $firstname\n";
